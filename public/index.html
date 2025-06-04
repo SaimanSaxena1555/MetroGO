@@ -1,1 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MetroGo - Route Finder</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="light">
+  <button id="toggle-dark-mode" class="toggle-dark-mode" aria-label="Toggle dark mode">
+    <img id="toggle-dark-mode-img" class="toggle-dark-mode-img" src="../assets/dark mode/dark_mode_moon.png" alt="Toggle Theme Icon">
+  </button>
+  
+  
+  <section id="input_section" class="input_section">
+    
+    <h1 id="main_heading" class="main_heading">Find Your Shortest Metro Route</h1>
+    <p id="summary" class="summary">Discover the fastest and most accurate route between Metro stations in Delhi.</p>
 
+    <div class="form-section">
+      <label for="source">Source Station</label>
+      <input id="source" list="source-datalist" type="text" placeholder="Start from where?" />
+      
+      <datalist id="source-datalist">
+          <option value="shaheed sthal (new bus adda)">
+          <option value="hindon river">
+          <option value="arthala">
+          <option value="mohan nagar">
+          <option value="shyam park">
+          <option value="major mohit sharma rajendra nagar">
+          <option value="raj bagh">
+          <option value="shaheed nagar">
+          <option value="dilshad garden">
+          <option value="jhilmil">
+          <option value="mansarovar park">
+          <option value="shahdara">
+          <option value="welcome">
+          <option value="seelampur">
+          <option value="shastri park">
+          <option value="kashmere gate">
+          <option value="tis hazari">
+          <option value="pulbangash">
+          <option value="pratap nagar">
+          <option value="shastri nagar">
+          <option value="inderlok">
+          <option value="kanhaiya nagar">
+          <option value="keshav puram">
+          <option value="netaji subhash place">
+          <option value="kohat enclave">
+          <option value="pitampura">
+          <option value="rohini east">
+          <option value="rohini west">
+          <option value="rithala">
+          <option value="samaypur badli">
+          <option value="rohini sector - 18, 19">
+          <option value="haiderpur badli mor">
+          <option value="jahangirpuri">
+          <option value="adarsh nagar">
+          <option value="azadpur">
+          <option value="model town">
+          <option value="guru teg bahadur nagar">
+          <option value="vishwavidyalaya">
+          <option value="vidhan sabha">
+          <option value="civil lines">
+          <option value="chandni chowk">
+          <option value="chawri bazar">
+          <option value="new delhi (yellow & airport line)">
+          <option value="rajiv chowk">
+          <option value="patel chowk">
+          <option value="central secretariat">
+          <option value="udyog bhawan">
+          <option value="lok kalyan marg">
+          <option value="jor bagh">
+          <option value="dilli haat - ina">
+          <option value="aiims">
+          <option value="green park">
+          <option value="hauz khas">
+          <option value="malviya nagar">
+          <option value="saket">
+          <option value="qutab minar">
+          <option value="chhatarpur">
+          <option value="sultanpur">
+          <option value="ghitorni">
+          <option value="arjan garh">
+          <option value="guru dronacharya">
+          <option value="sikanderpur">
+          <option value="m.g. road">
+          <option value="iffco chowk">
+          <option value="millennium city centre gurugram">
+          <option value="dwarka sector - 21">
+          <option value="dwarka sector - 8">
+          <option value="dwarka sector - 9">
+          <option value="dwarka sector - 10">
+          <option value="dwarka sector - 11">
+          <option value="dwarka sector - 12">
+          <option value="dwarka sector - 13">
+          <option value="dwarka sector - 14">
+          <option value="dwarka">
+          <option value="dwarka mor">
+          <option value="nawada">
+          <option value="uttam nagar west">
+          <option value="uttam nagar east">
+          <option value="janakpuri west">
+          <option value="janakpuri east">
+          <option value="tilak nagar">
+          <option value="subhash nagar">
+          <option value="tagore garden">
+          <option value="rajouri garden">
+          <option value="ramesh nagar">
+          <option value="moti nagar">
+          <option value="kirti nagar">
+          <option value="shadipur">
+          <option value="patel nagar">
+          <option value="rajendra place">
+          <option value="karol bagh">
+          <option value="jhandewalan">
+          <option value="ramakrishna ashram marg">
+          <option value="barakhamba road">
+          <option value="mandi house">
+          <option value="supreme court">
+          <option value="indraprastha">
+          <option value="yamuna bank">
+          <option value="akshardham">
+          <option value="mayur vihar -i">
+          <option value="mayur vihar extension">
+          <option value="new ashok nagar">
+          <option value="noida sector-15">
+          <option value="noida sector-16">
+          <option value="noida sector-18">
+          <option value="botanical garden">
+          <option value="golf course">
+          <option value="noida city centre">
+          <option value="sector - 34 noida">
+          <option value="sector - 52 noida">
+          <option value="sector - 61 noida">
+          <option value="sector - 59 noida">
+          <option value="sector - 62 noida">
+          <option value="noida electronic city">
+          <option value="laxmi nagar">
+          <option value="nirman vihar">
+          <option value="preet vihar">
+          <option value="karkarduma">
+          <option value="anand vihar isbt">
+          <option value="kaushambi">
+          <option value="vaishali">
+          <option value="satguru ram singh marg">
+          <option value="ashok park main">
+          <option value="punjabi bagh">
+          <option value="punjabi bagh west">
+          <option value="shivaji park">
+          <option value="madipur">
+          <option value="paschim vihar east">
+          <option value="paschim vihar west">
+          <option value="peeragarhi">
+          <option value="udyog nagar">
+          <option value="maharaja surajmal stadium">
+          <option value="nangloi">
+          <option value="nangloi railway station">
+          <option value="rajdhani park">
+          <option value="mundka">
+          <option value="mundka industrial area (mia)">
+          <option value="ghevra metro station">
+          <option value="tikri kalan">
+          <option value="tikri border">
+          <option value="pandit shree ram sharma">
+          <option value="bahadurgarh city">
+          <option value="brig. hoshiar singh">
+          <option value="lal quila">
+          <option value="jama masjid">
+          <option value="delhi gate">
+          <option value="ito">
+          <option value="janpath">
+          <option value="khan market">
+          <option value="jln stadium">
+          <option value="jangpura">
+          <option value="lajpat nagar">
+          <option value="moolchand">
+          <option value="kailash colony">
+          <option value="nehru place">
+          <option value="kalkaji mandir">
+          <option value="govind puri">
+          <option value="harkesh nagar okhla">
+          <option value="jasola-apollo">
+          <option value="sarita vihar">
+          <option value="mohan estate">
+          <option value="tughlakabad station">
+          <option value="badarpur border">
+          <option value="sarai">
+          <option value="nhpc chowk">
+          <option value="mewala maharajpur">
+          <option value="sector-28">
+          <option value="badkal mor">
+          <option value="old faridabad">
+          <option value="neelam chowk ajronda">
+          <option value="bata chowk">
+          <option value="escorts mujesar">
+          <option value="sant surdas (sihi)">
+          <option value="raja nahar singh (ballabhgarh)">
+          <option value="majlis park">
+          <option value="shalimar bagh">
+          <option value="shakurpur">
+          <option value="esi-basai darapur">
+          <option value="mayapuri">
+          <option value="naraina vihar">
+          <option value="delhi cantt.">
+          <option value="durgabai deshmukh south campus">
+          <option value="sir m. vishweshwaraiah moti bagh">
+          <option value="bhikaji cama place">
+          <option value="sarojini nagar">
+          <option value="south extension">
+          <option value="vinobapuri">
+          <option value="ashram">
+          <option value="sarai kale khan - nizamuddin">
+          <option value="mayur vihar pocket-1">
+          <option value="trilokpuri-sanjay lake">
+          <option value="east vinod nagar-mayur vihar -ii">
+          <option value="mandawali - west vinod nagar">
+          <option value="i.p. extension">
+          <option value="karkarduma court">
+          <option value="krishna nagar">
+          <option value="east azad nagar">
+          <option value="jafrabad">
+          <option value="maujpur-babarpur">
+          <option value="gokulpuri">
+          <option value="johri enclave">
+          <option value="shiv vihar">
+          <option value="krishna park extension">
+          <option value="dabri mor - janakpuri south">
+          <option value="dashrathpuri">
+          <option value="palam">
+          <option value="sadar bazar cantonment">
+          <option value="terminal 1-igi airport">
+          <option value="shankar vihar">
+          <option value="vasant vihar">
+          <option value="munirka">
+          <option value="r.k. puram">
+          <option value="iit">
+          <option value="panchsheel park">
+          <option value="chirag delhi">
+          <option value="greater kailash">
+          <option value="nehru enclave">
+          <option value="okhla nsic">
+          <option value="sukhdev vihar">
+          <option value="jamia millia islamia">
+          <option value="okhla vihar">
+          <option value="jasola vihar shaheen bagh">
+          <option value="kalindi kunj">
+          <option value="okhla bird sanctuary">
+          <option value="nangli">
+          <option value="najafgarh">
+          <option value="dhansa bus stand">
+          <option value="new delhi">
+          <option value="shivaji stadium">
+          <option value="dhaula kuan">
+          <option value="delhi aerocity">
+          <option value="airport (t-3)">
+          <option value="yashobhoomi dwarka sector - 25">
+          <option value="sector 55-56">
+          <option value="sector 54 chowk">
+          <option value="sector 53-54">
+          <option value="sector 42-43">
+          <option value="phase-1">
+          <option value="phase-2">
+          <option value="belvedere towers">
+          <option value="cyber city">
+          <option value="moulsari avenue">
+          <option value="phase-3">
+      </datalist>
+
+      <label for="destination">Destination Station</label>
+      <input id="destination" list="destination-datalist" type="text" placeholder="Where to go?" />
+      
+      <datalist id="destination-datalist">
+          <option value="shaheed sthal (new bus adda)">
+          <option value="hindon river">
+          <option value="arthala">
+          <option value="mohan nagar">
+          <option value="shyam park">
+          <option value="major mohit sharma rajendra nagar">
+          <option value="raj bagh">
+          <option value="shaheed nagar">
+          <option value="dilshad garden">
+          <option value="jhilmil">
+          <option value="mansarovar park">
+          <option value="shahdara">
+          <option value="welcome">
+          <option value="seelampur">
+          <option value="shastri park">
+          <option value="kashmere gate">
+          <option value="tis hazari">
+          <option value="pulbangash">
+          <option value="pratap nagar">
+          <option value="shastri nagar">
+          <option value="inderlok">
+          <option value="kanhaiya nagar">
+          <option value="keshav puram">
+          <option value="netaji subhash place">
+          <option value="kohat enclave">
+          <option value="pitampura">
+          <option value="rohini east">
+          <option value="rohini west">
+          <option value="rithala">
+          <option value="samaypur badli">
+          <option value="rohini sector - 18, 19">
+          <option value="haiderpur badli mor">
+          <option value="jahangirpuri">
+          <option value="adarsh nagar">
+          <option value="azadpur">
+          <option value="model town">
+          <option value="guru teg bahadur nagar">
+          <option value="vishwavidyalaya">
+          <option value="vidhan sabha">
+          <option value="civil lines">
+          <option value="chandni chowk">
+          <option value="chawri bazar">
+          <option value="new delhi (yellow & airport line)">
+          <option value="rajiv chowk">
+          <option value="patel chowk">
+          <option value="central secretariat">
+          <option value="udyog bhawan">
+          <option value="lok kalyan marg">
+          <option value="jor bagh">
+          <option value="dilli haat - ina">
+          <option value="aiims">
+          <option value="green park">
+          <option value="hauz khas">
+          <option value="malviya nagar">
+          <option value="saket">
+          <option value="qutab minar">
+          <option value="chhatarpur">
+          <option value="sultanpur">
+          <option value="ghitorni">
+          <option value="arjan garh">
+          <option value="guru dronacharya">
+          <option value="sikanderpur">
+          <option value="m.g. road">
+          <option value="iffco chowk">
+          <option value="millennium city centre gurugram">
+          <option value="dwarka sector - 21">
+          <option value="dwarka sector - 8">
+          <option value="dwarka sector - 9">
+          <option value="dwarka sector - 10">
+          <option value="dwarka sector - 11">
+          <option value="dwarka sector - 12">
+          <option value="dwarka sector - 13">
+          <option value="dwarka sector - 14">
+          <option value="dwarka">
+          <option value="dwarka mor">
+          <option value="nawada">
+          <option value="uttam nagar west">
+          <option value="uttam nagar east">
+          <option value="janakpuri west">
+          <option value="janakpuri east">
+          <option value="tilak nagar">
+          <option value="subhash nagar">
+          <option value="tagore garden">
+          <option value="rajouri garden">
+          <option value="ramesh nagar">
+          <option value="moti nagar">
+          <option value="kirti nagar">
+          <option value="shadipur">
+          <option value="patel nagar">
+          <option value="rajendra place">
+          <option value="karol bagh">
+          <option value="jhandewalan">
+          <option value="ramakrishna ashram marg">
+          <option value="barakhamba road">
+          <option value="mandi house">
+          <option value="supreme court">
+          <option value="indraprastha">
+          <option value="yamuna bank">
+          <option value="akshardham">
+          <option value="mayur vihar -i">
+          <option value="mayur vihar extension">
+          <option value="new ashok nagar">
+          <option value="noida sector-15">
+          <option value="noida sector-16">
+          <option value="noida sector-18">
+          <option value="botanical garden">
+          <option value="golf course">
+          <option value="noida city centre">
+          <option value="sector - 34 noida">
+          <option value="sector - 52 noida">
+          <option value="sector - 61 noida">
+          <option value="sector - 59 noida">
+          <option value="sector - 62 noida">
+          <option value="noida electronic city">
+          <option value="laxmi nagar">
+          <option value="nirman vihar">
+          <option value="preet vihar">
+          <option value="karkarduma">
+          <option value="anand vihar isbt">
+          <option value="kaushambi">
+          <option value="vaishali">
+          <option value="satguru ram singh marg">
+          <option value="ashok park main">
+          <option value="punjabi bagh">
+          <option value="punjabi bagh west">
+          <option value="shivaji park">
+          <option value="madipur">
+          <option value="paschim vihar east">
+          <option value="paschim vihar west">
+          <option value="peeragarhi">
+          <option value="udyog nagar">
+          <option value="maharaja surajmal stadium">
+          <option value="nangloi">
+          <option value="nangloi railway station">
+          <option value="rajdhani park">
+          <option value="mundka">
+          <option value="mundka industrial area (mia)">
+          <option value="ghevra metro station">
+          <option value="tikri kalan">
+          <option value="tikri border">
+          <option value="pandit shree ram sharma">
+          <option value="bahadurgarh city">
+          <option value="brig. hoshiar singh">
+          <option value="lal quila">
+          <option value="jama masjid">
+          <option value="delhi gate">
+          <option value="ito">
+          <option value="janpath">
+          <option value="khan market">
+          <option value="jln stadium">
+          <option value="jangpura">
+          <option value="lajpat nagar">
+          <option value="moolchand">
+          <option value="kailash colony">
+          <option value="nehru place">
+          <option value="kalkaji mandir">
+          <option value="govind puri">
+          <option value="harkesh nagar okhla">
+          <option value="jasola-apollo">
+          <option value="sarita vihar">
+          <option value="mohan estate">
+          <option value="tughlakabad station">
+          <option value="badarpur border">
+          <option value="sarai">
+          <option value="nhpc chowk">
+          <option value="mewala maharajpur">
+          <option value="sector-28">
+          <option value="badkal mor">
+          <option value="old faridabad">
+          <option value="neelam chowk ajronda">
+          <option value="bata chowk">
+          <option value="escorts mujesar">
+          <option value="sant surdas (sihi)">
+          <option value="raja nahar singh (ballabhgarh)">
+          <option value="majlis park">
+          <option value="shalimar bagh">
+          <option value="shakurpur">
+          <option value="esi-basai darapur">
+          <option value="mayapuri">
+          <option value="naraina vihar">
+          <option value="delhi cantt.">
+          <option value="durgabai deshmukh south campus">
+          <option value="sir m. vishweshwaraiah moti bagh">
+          <option value="bhikaji cama place">
+          <option value="sarojini nagar">
+          <option value="south extension">
+          <option value="vinobapuri">
+          <option value="ashram">
+          <option value="sarai kale khan - nizamuddin">
+          <option value="mayur vihar pocket-1">
+          <option value="trilokpuri-sanjay lake">
+          <option value="east vinod nagar-mayur vihar -ii">
+          <option value="mandawali - west vinod nagar">
+          <option value="i.p. extension">
+          <option value="karkarduma court">
+          <option value="krishna nagar">
+          <option value="east azad nagar">
+          <option value="jafrabad">
+          <option value="maujpur-babarpur">
+          <option value="gokulpuri">
+          <option value="johri enclave">
+          <option value="shiv vihar">
+          <option value="krishna park extension">
+          <option value="dabri mor - janakpuri south">
+          <option value="dashrathpuri">
+          <option value="palam">
+          <option value="sadar bazar cantonment">
+          <option value="terminal 1-igi airport">
+          <option value="shankar vihar">
+          <option value="vasant vihar">
+          <option value="munirka">
+          <option value="r.k. puram">
+          <option value="iit">
+          <option value="panchsheel park">
+          <option value="chirag delhi">
+          <option value="greater kailash">
+          <option value="nehru enclave">
+          <option value="okhla nsic">
+          <option value="sukhdev vihar">
+          <option value="jamia millia islamia">
+          <option value="okhla vihar">
+          <option value="jasola vihar shaheen bagh">
+          <option value="kalindi kunj">
+          <option value="okhla bird sanctuary">
+          <option value="nangli">
+          <option value="najafgarh">
+          <option value="dhansa bus stand">
+          <option value="new delhi">
+          <option value="shivaji stadium">
+          <option value="dhaula kuan">
+          <option value="delhi aerocity">
+          <option value="airport (t-3)">
+          <option value="yashobhoomi dwarka sector - 25">
+          <option value="sector 55-56">
+          <option value="sector 54 chowk">
+          <option value="sector 53-54">
+          <option value="sector 42-43">
+          <option value="phase-1">
+          <option value="phase-2">
+          <option value="belvedere towers">
+          <option value="cyber city">
+          <option value="moulsari avenue">
+          <option value="phase-3">
+      </datalist>
+
+      <div class="buttons">
+          <button onclick="clearForm()">Clear</button>
+          <button onclick="findRoute()">Find Route</button>
+      </div>
+  </div>
+  </section>
+
+  <section id="route-details">
+    <div class="route-left">
+      <h2>Route Details</h2>
+      <p>Your metro route information.</p>
+    </div>
+  
+    <div class="route-right">
+      <div class="route-item">
+        <div class="route-item-icon">
+          <img src="../assets/route details/location.png" alt="Path Icon" />
+          <div class="route-item-label">
+            <span>Path</span>
+            <span id="route-details-path-sub">Metro line and interchanges</span>
+          </div>
+        </div>
+        <div class="route-item-value" id="route-details-path-value">
+          --
+        </div>
+      </div>
+  
+      <div class="route-item">
+        <div class="route-item-icon">
+          <img src="../assets/route details/clock.png" alt="Time Icon" />
+          <div class="route-item-label">
+            <span>Travel Time</span>
+          </div>
+        </div>
+        <div class="route-item-value" id="route-details-time-value">--</div>
+      </div>
+  
+      <div class="route-item">
+        <div class="route-item-icon">
+          <img src="../assets/route details/distance.png" alt="Distance Icon" />
+          <div class="route-item-label">
+            <span>Distance</span>
+          </div>
+        </div>
+        <div class="route-item-distance-value" id="route-details-distance-value">--</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="path-section">
+    <h2>Delhi Metro Route</h2>
+    
+    <div class="route-header">
+        <div class="route-info">
+            <div class="route-info-item">
+                <span class="label">Stations</span>
+                <span class="value" id="station-count">--</span>
+            </div>
+            <div class="route-info-item">
+                <span class="label">Travel Time</span>
+                <span class="value" id="travel-time">--</span>
+            </div>
+            <div class="route-info-item">
+                <span class="label">Distance</span>
+                <span class="value" id="total-distance">--</span>
+            </div>
+            <div class="route-info-item">
+                <span class="label">Transfers</span>
+                <span class="value" id="transfers">--</span>
+            </div>
+        </div>
+        <div class="no-transfers">
+            <span>🚇</span>
+            <span>Blue Line</span>
+        </div>
+    </div>
+
+    <div class="route-path">
+        <div class="route-endpoints">
+            <span>From: <span class="endpoint" id="start-station">--</span></span>
+            <span class="arrow">→</span>
+            <span>To: <span class="endpoint" id="end-station">--</span></span>
+        </div>
+    </div>
+
+    <div class="station-container">
+        <div class="station-line" id="station-line">
+            <!-- Stations will be dynamically inserted here -->
+        </div>
+    </div>
+</section>
+  
+
+    <footer>
+      © 2023 Delhi Metro Route Finder |
+      <a href="#">Privacy Policy</a> |
+      <a href="#">Terms of Use</a> |
+      <a href="#">Contact Us</a>
+    </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,661 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+  transition: background-color 1s ease, color 1s ease;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  color: #111;
+  margin: 0;
+  padding: 0;
+}
+
+#toggle-dark-mode {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1000;
+  margin-top: 50px;
+  margin-right: 150px;
+  padding: 8px;
+  border-radius: 50%;
+  transition: background-color 1s ease;
+}
+
+.toggle-dark-mode:hover {
+  background-color: rgba(0, 0, 0, 0.07); /* light mode */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dark .toggle-dark-mode:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* dark mode */
+  box-shadow: 0 2px 6px rgba(255, 255, 255, 0.08);
+}
+
+.toggle-dark-mode-img {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.toggle-dark-mode:active .toggle-dark-mode-img {
+  transform: scale(1.5) rotate(360deg);
+}
+
+@keyframes smoothRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(180deg); }
+}
+
+.rotate {
+  animation: smoothRotate 1s ease forwards;
+}
+
+/* DARK MODE STYLING */
+
+body.dark {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+/* General Text Elements */
+body.dark h1,
+body.dark h2,
+body.dark h3,
+body.dark h4,
+body.dark h5,
+body.dark h6,
+body.dark p,
+body.dark label,
+body.dark span,
+body.dark div,
+body.dark a {
+  color: #e0e0e0;
+}
+
+/* Placeholder text */
+body.dark input::placeholder {
+  color: #aaaaaa;
+}
+
+/* Section Backgrounds */
+body.dark .input_section,
+body.dark .path-section,
+body.dark footer {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+/* Input Fields */
+body.dark .form-section input[type="text"] {
+  border: 1px solid #444;
+  background-color: #2b2b2b;
+  color: #e0e0e0;
+}
+
+/* Buttons */
+body.dark .buttons button:first-child {
+  background-color: transparent;
+  border: 2px solid #aaa;
+  color: #e0e0e0;
+}
+
+body.dark .buttons button:first-child:hover {
+  background-color: #2a2a2a;
+}
+
+body.dark .buttons button:last-child {
+  background-color: #333;
+  color: #e0e0e0;
+}
+
+body.dark .buttons button:last-child:hover {
+  background-color: #444;
+}
+
+body.dark .span {
+  color: #e0e0e0;
+}
+
+/* Route Items */
+body.dark .route-item-icon img {
+  background-color: #333;
+}
+
+body.dark .route-path {
+  background: #1e1e1e;
+  border-left: 4px solid #4f8ff7;
+}
+
+/* Route Header */
+body.dark .route-header {
+  background: linear-gradient(135deg, #102342, #380052); /* rich, dark blue tones */
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+  transition: background 1s ease, color 1s ease;
+}
+
+
+/* No Transfers Label */
+body.dark .no-transfers {
+  background: #333;
+  color: #ffffff;
+}
+
+/* Station Container */
+body.dark .station-container {
+  background: #181818;
+  border-color: #2a2a2a;
+}
+
+body.dark .station-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Station Badges */
+body.dark .station-badge.start {
+  background: rgba(46, 125, 50, 0.2);
+  color: #a5d6a7;
+}
+
+body.dark .station-badge.end {
+  background: rgba(183, 28, 28, 0.2);
+  color: #ef9a9a;
+}
+
+body.dark footer {
+  background-color: #1a1a1a;
+  color: #cccccc;
+  border-top: 1px solid #333;
+}
+
+body.dark footer a {
+  color: #cccccc;
+}
+
+body.dark footer a:hover {
+  color: #ffffff;
+}
+
+/* light mode styling */
+
+
+.input_section {
+  text-align: center;
+  padding: 40px 20px;
+  transition: background-color 1s ease, color 1s ease;
+}
+
+.main_heading {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.summary {
+  font-size: 16px;
+  color: #ffffff;
+  max-width: 600px;
+  margin: 0 auto 30px;
+  line-height: 1.5;
+}
+
+.form-section {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.form-section label {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 6px;
+  text-align: left;
+}
+
+.form-section input[type="text"] {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  color: #333;
+  outline: none;
+  margin-bottom: 5px;
+}
+
+.form-section input[type="text"]::placeholder {
+  color: #999;
+  font-weight: 400;
+  font-size: 14px;
+  margin-top: 2px;
+}
+
+.buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.buttons button {
+  flex: 1;
+  padding: 14px 0;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.buttons button:first-child {
+  background-color: #fff;
+  color: #000;
+  border: 2px solid #000;
+}
+
+.buttons button:first-child:hover {
+  background-color: #f0f0f0;
+}
+
+.buttons button:last-child {
+  background-color: #000;
+  color: #fff;
+}
+
+.buttons button:last-child:hover {
+  background-color: #333;
+}
+
+/* Route Details & Footer Styling */
+
+/* Route Details Section */
+#route-details {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  transition: background-color 1s ease, color 1s ease;
+}
+
+#route-details h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.route-left {
+  flex: 1;
+  min-width: 250px;
+}
+
+.route-left p {
+  font-size: 14px;
+  color: inherit; /* Inherit from body (light or dark) */
+}
+
+.route-right {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  min-width: 300px;
+}
+
+/* Individual Route Items */
+.route-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 12px;
+}
+
+.route-item-icon {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1.5;
+}
+
+.route-item-icon img {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background-color: #f5f5f5;
+  padding: 6px;
+}
+
+.route-item-label {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  color: inherit; /* Uses parent color for light/dark */
+}
+
+.route-item-label span:first-child {
+  font-weight: 600;
+  color: inherit;
+}
+
+#route-details-path-sub {
+  width: 200px;
+  display: inline-block; /* ensures width is applied to a <span> */
+}
+
+
+.route-item-value {
+  flex: 2;
+  font-size: 15px;
+  font-weight: 500;
+  text-align: right;
+  color: inherit;
+}
+
+/*  Path Section Styling */
+
+.path-section {
+  max-width: 900px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: background-color 1s ease, color 1s ease;
+}
+
+.path-section h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+}
+
+.route-header {
+  background: linear-gradient(135deg, #4285f4, #1a73e8);
+  color: white;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  transition: background 1s ease, color 1s ease;
+}
+
+.route-info {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.route-info-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.route-info-item .label {
+  font-size: 12px;
+  opacity: 0.9;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.route-info-item .value {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.route-path {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+  padding: 16px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #4285f4;
+  transition: background-color 1s ease;
+}
+
+.route-endpoints {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  color: #5f6368;
+}
+
+.endpoint {
+  font-weight: 500;
+  color: #1a1a1a;
+}
+
+.arrow {
+  color: #4285f4;
+  font-size: 16px;
+}
+
+.station-container {
+  position: relative;
+  max-height: 500px;
+  overflow-y: auto;
+  border: 1px solid #e8eaed;
+  border-radius: 12px;
+  background: #fafbfc;
+  transition: background-color 1s ease, border-color 1s ease;
+}
+
+.station-line {
+  position: relative;
+  padding: 20px;
+}
+
+.station-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 0;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.station-item:hover {
+  background: rgba(66, 133, 244, 0.05);
+  border-radius: 8px;
+  margin: 0 -12px;
+  padding: 12px 12px;
+}
+
+.station-number {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  margin-right: 16px;
+  flex-shrink: 0;
+  z-index: 2;
+  position: relative;
+}
+
+.station-number.regular,
+.station-number.transfer,
+.station-number.start,
+.station-number.end {
+  color: black;
+}
+
+.station-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.station-name {
+  font-weight: 500;
+  color: #1a1a1a;
+  font-size: 15px;
+  text-transform: capitalize;
+}
+
+.station-meta {
+  font-size: 12px;
+  color: #5f6368;
+}
+
+.station-badge {
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.station-badge.start {
+  background: #e8f5e8;
+  color: #34a853;
+}
+
+.station-badge.transfer {
+  background-color: orange;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-left: 6px;
+  font-size: 12px;
+}
+
+
+.station-badge.end {
+  background: #fce8e6;
+  color: #ea4335;
+}
+
+.connecting-line {
+  position: absolute;
+  left: 35px;
+  top: 44px;
+  bottom: -12px;
+  width: 3px;
+  border-radius: 2px;
+}
+
+.station-item:last-child .connecting-line {
+  display: none;
+}
+
+.no-transfers {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #e8f5e8;
+  color: #34a853;
+  padding: 6px 12px;
+  border-radius: 16px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+
+
+.test-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #4285f4;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(66, 133, 244, 0.3);
+}
+
+.test-button:hover {
+  background: #1a73e8;
+}
+
+/* Scrollbar styling */
+.station-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.station-container::-webkit-scrollbar-track {
+  background: #f1f3f4;
+  border-radius: 3px;
+}
+
+.station-container::-webkit-scrollbar-thumb {
+  background: #dadce0;
+  border-radius: 3px;
+}
+
+.station-container::-webkit-scrollbar-thumb:hover {
+  background: #bdc1c6;
+}
+
+footer {
+  text-align: center;
+  font-size: 14px;
+  color: #777;                /* Light text */
+  background-color: #f9f9f9;  /* Light background */
+  margin-top: 50px;
+  padding: 30px 30px; 
+  border-top: 1px solid #ddd;
+  transition: background-color 1s ease, color 1s ease, border-color 1s ease;
+}
+
+footer a {
+  color: #555;
+  text-decoration: none;
+  margin: 0 6px;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #000; /* On hover: darker text */
+  text-decoration: underline;
+}
+
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .route-info {
+      justify-content: space-around;
+      width: 100%;
+  }
+
+  .route-info-item .value {
+      font-size: 16px;
+  }
+
+  .station-container {
+      max-height: 400px;
+  }
+}
