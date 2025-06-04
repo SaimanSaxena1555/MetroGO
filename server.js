@@ -7,10 +7,9 @@ app.use(cors());
 const PORT = process.env.PORT || 3000;
 
 
-// ✅ Fix: add this line to parse incoming JSON
 app.use(express.json()); 
 
-// Import your shortest route logic
+// Import shortest route logic
 const { shortestRoute, graph } = require('./metro_logic'); // ⚠️ Make sure to export 'graph' from metro_logic
 
 app.post('/api/route', (req, res) => {
@@ -24,9 +23,7 @@ app.post('/api/route', (req, res) => {
   res.json(result);
 });
 
-// 🔍 DEBUG ROUTES - Add these for testing
-
-// General graph info + optional station checking
+// DEBUG 
 app.get('/debug/graph', (req, res) => {
     const { station1, station2 } = req.query;
     
@@ -36,7 +33,6 @@ app.get('/debug/graph', (req, res) => {
         sampleNodes: Array.from(graph.nodes()).slice(0, 20)
     };
     
-    // If specific stations are provided, check them
     if (station1) {
         const station1Lower = station1.toLowerCase().trim();
         result.station1 = {
@@ -55,14 +51,12 @@ app.get('/debug/graph', (req, res) => {
         };
     }
     
-    // Check if path exists between the two stations
     if (station1 && station2) {
         const s1 = station1.toLowerCase().trim();
         const s2 = station2.toLowerCase().trim();
         
         if (graph.hasNode(s1) && graph.hasNode(s2)) {
             try {
-                // Try to check if path exists (if method available)
                 const hasPath = jsnx.hasPath ? jsnx.hasPath(graph, s1, s2) : 'hasPath method not available';
                 result.pathExists = hasPath;
             } catch (e) {
@@ -76,7 +70,6 @@ app.get('/debug/graph', (req, res) => {
     res.json(result);
 });
 
-// Search for stations containing a term
 app.get('/debug/search/:term', (req, res) => {
     const searchTerm = req.params.term.toLowerCase();
     const allNodes = Array.from(graph.nodes());
@@ -92,7 +85,6 @@ app.get('/debug/search/:term', (req, res) => {
     });
 });
 
-// Get neighbors of any station
 app.get('/debug/neighbors/:station', (req, res) => {
     const station = req.params.station.toLowerCase().trim();
     
