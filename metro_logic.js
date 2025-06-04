@@ -199,9 +199,6 @@ function buildMetroNetwork() {
 // Build the network when this module loads
 buildMetroNetwork();
 
-// ------------------------
-// 🔍 Route Calculation Logic
-// ------------------------
 function shortestRoute(startStation, endStation) {
   startStation = startStation.toLowerCase().trim();
   endStation = endStation.toLowerCase().trim();
@@ -220,7 +217,7 @@ function shortestRoute(startStation, endStation) {
       weight: 'weight'
     });
 
-    // 🔁 Build weightarr by checking edge weights between stations
+    // Build weightarr by checking edge weights between stations
     const weightarr = [];
     for (let i = 0; i < path.length - 1; i++) {
       const u = path[i];
@@ -235,13 +232,13 @@ function shortestRoute(startStation, endStation) {
       }
     }
 
-    // 🔄 Count the number of transfers and transfer stations
+    // Count the number of transfers and transfer stations
     const transferInfo = countTransfers(weightarr, path);
 
-    // 🎨 Get the color of each station based on the line it belongs to
+    // Get the color of each station based on the line it belongs to
     const colorPath = colorOfStations(path);
 
-    // ✅ Final response
+    // Final response
     return {
       route: path,
       totalDistance: `${distance.toFixed(2)} meters`,
@@ -283,6 +280,8 @@ function countTransfers(weightarr, path) {
     stations: transferStations
   };
 }
+
+// Manage the color of stations
 
 function colorOfStations(path) {
   const colorPath = [];
