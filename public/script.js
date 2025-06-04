@@ -10,19 +10,10 @@ toggleButton.addEventListener("click", () => {
     ? "../assets/dark mode/light_mode_sun.png"
     : "../assets/dark mode/dark_mode_moon.png";
 
-  // Note: localStorage removed for Claude.ai compatibility
-  // localStorage.setItem("theme", isDark ? "dark" : "light");
 });
 
-// 🌐 Load theme + setup autocomplete on page load
-window.addEventListener("DOMContentLoaded", () => {
-  // Note: localStorage removed for Claude.ai compatibility
-  // const savedTheme = localStorage.getItem("theme");
-  // if (savedTheme === "dark") {
-  //   document.body.classList.add("dark");
-  //   iconImg.src = "../assets/dark mode/light_mode_sun.png";
-  // }
-});
+
+window.addEventListener("DOMContentLoaded", () => {});
 
 // 🧠 Station list
 const stationList = ["shaheed sthal (new bus adda)", "hindon river", "arthala", "mohan nagar", "shyam park",
