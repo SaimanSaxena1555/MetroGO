@@ -4,7 +4,8 @@ const app = express();
 const cors = require("cors");
 app.use(cors());
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
+
 
 // ✅ Fix: add this line to parse incoming JSON
 app.use(express.json()); 
