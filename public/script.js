@@ -7,8 +7,8 @@ toggleButton.addEventListener("click", () => {
 
   const isDark = document.body.classList.contains("dark");
   iconImg.src = isDark
-    ? "../assets/dark mode/light_mode_sun.png"
-    : "../assets/dark mode/dark_mode_moon.png";
+    ? "/assets/dark_mode/light_mode_sun.png"
+    : "/assets/dark_mode/dark_mode_moon.png";
 
 });
 
