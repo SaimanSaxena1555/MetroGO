@@ -43,20 +43,6 @@ The entire user interface was designed using Figma, with a focus on:
 • Mobile-friendly responsiveness
 • Smooth dark mode toggle
 
-Project Structure
-
-MetroGo/
-├── public/                  # Frontend files
-│   ├── index.html
-│   ├── style.css
-│   └── script.js
-|   ├── assets/                 # Static image files
-│       ├── dark_mode/
-│       ├── route_details
-├── server.js               # Node.js + Express server
-├── metro_logic.js          # Graph & Dijkstra logic
-├── package.json
-└── .gitignore
 
 Live Demo
 Hosted on Render:
