@@ -14,7 +14,7 @@ Key Features
 • Works on Desktop and Mobile
 
 How Route Timing Works
-MetroGo uses estimated average distances and metro speed to calculate time between stations:
+MetroGo uses estimated average distances and metro speed to calculate the time between stations:
 
 • Distance: Each line (Blue, Yellow, etc.) has an estimated average inter-station distance (based on station count and route length from Wikipedia). These values are used as edge weights in the graph.
 
@@ -33,7 +33,7 @@ The core pathfinding is powered by jsnetworkx — the JavaScript port of Python�
 • Dijkstra's algorithm is used to calculate the shortest path based on distance
 • Transfer detection is done by tracking changes in line color along the path
 
-This structure ensures the shortest realistic path is chosen — not just based on station count but on actual travel distance.
+This structure ensures that the shortest, realistic path is chosen — not just based on station count, but on actual travel distance.
 
 UI & Design
 The entire user interface was designed using Figma, with a focus on:
@@ -46,7 +46,7 @@ The entire user interface was designed using Figma, with a focus on:
 
 Live Demo
 Hosted on Render:
-https://metrogo.onrender.com (Replace with your real URL if different)
+https://metrogo.onrender.com 
 
 How to Run Locally
 
@@ -68,9 +68,6 @@ Disclaimer
 • This project does not use official APIs because government metro data is not easily available for public API access.
 • However, every effort has been made to ensure data is close to real-world accuracy for educational purposes.
 
-Author
-By Saiman Saxena
-Designed in Figma | Developed with Node.js, Express, and JavaScript
 
 License
 This project is open-source and free to use for learning, non-commercial use, and personal exploration.
