@@ -48,19 +48,6 @@ Live Demo
 Hosted on Render:
 https://metrogo.onrender.com 
 
-How to Run Locally
-
-# Clone the repo
-git clone https://github.com/your-username/MetroGo.git
-cd MetroGo
-
-# Install dependencies
-npm install
-
-# Start the server
-node server.js
-
-# Visit: http://localhost:3000
 
 Disclaimer
 
